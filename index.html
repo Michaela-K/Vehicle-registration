@@ -3,50 +3,58 @@
   <head>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="main">
       <div>
-        <h1>Registratioin Form</h1>
+        <h1>Registration Form</h1>
       </div>
       <div class="firstlastNames">
         <div>
-          <input type="text" placeholder="First Name" />
+          <input class="firstName" type="text" placeholder="First Name" />
         </div>
         <div>
-          <input type="text" placeholder="Last Name" />
+          <input class="lastName" type="text" placeholder="Last Name" />
         </div>
       </div>
       <div>
-        <h3>Salams Mohammad Younas! Thank you for joining us.</h3>
+        <h2 class="greeting hidden">
+          Salams Mohammad Younas! Thank's for joining us !
+        </h2>
       </div>
       <div>
         <h2>How many vehicles do you want to buy?</h2>
       </div>
       <div class="btnsTotalVehicles">
-        <div>
-          <button>+</button>
+        <div class="counter hidden">
+          <div class="number">0</div>
         </div>
-        <div>
-          <button>-</button>
+        <div id="addMinus">
+          <div>
+            <button class="add">+</button>
+          </div>
+          <div>
+            <button class="minus">-</button>
+          </div>
         </div>
       </div>
       <div class="vehicles">
         <div class="vehicle">
           <div>
-            <h2>What color of vehicle would you prefer for vehicle 1</h2>
+            <h2>What color would you prefer for vehicle 1 ?</h2>
           </div>
           <div class="colorButtons">
             <div>
-              <button>green</button>
+              <button>Green</button>
             </div>
             <div>
-              <button>grey</button>
+              <button>Grey</button>
             </div>
             <div>
-              <button>yellow</button>
+              <button>Yellow</button>
             </div>
             <div>
-              <button>brown</button>
+              <button>Black</button>
             </div>
           </div>
           <div>
@@ -54,38 +62,32 @@
           </div>
           <div class="sizeVehicle">
             <div>
-              <p>Length</p>
-            </div>
-            <div>
               <input type="text" placeholder="Length" />
             </div>
             <div>
-              <p>Width</p>
-            </div>
-            <div>
-              <input type="text" placeholder="width" />
+              <input type="text" placeholder="Width" />
             </div>
           </div>
           <div class="vehicleSize">
-            <p>Car size & color</p>
+            <p>Car Size & Color</p>
           </div>
         </div>
         <div class="vehicle">
           <div>
-            <h2>What color of vehicle would you prefer for vehicle 2</h2>
+            <h2>What color would you prefer for vehicle 2 ?</h2>
           </div>
           <div class="colorButtons">
             <div>
-              <button>green</button>
+              <button>Green</button>
             </div>
             <div>
-              <button>grey</button>
+              <button>Grey</button>
             </div>
             <div>
-              <button>yellow</button>
+              <button>Yellow</button>
             </div>
             <div>
-              <button>brown</button>
+              <button>Black</button>
             </div>
           </div>
           <div>
@@ -93,20 +95,14 @@
           </div>
           <div class="sizeVehicle">
             <div>
-              <p>Length</p>
-            </div>
-            <div>
               <input type="text" placeholder="Length" />
             </div>
             <div>
-              <p>Width</p>
-            </div>
-            <div>
-              <input type="text" placeholder="width" />
+              <input type="text" placeholder="Width" />
             </div>
           </div>
           <div class="vehicleSize">
-            <p>Car size & color</p>
+            <p>Car Size & Color</p>
           </div>
         </div>
       </div>
