@@ -11,30 +11,31 @@
       </div>
       <div class="firstlastNames">
         <div>
-          <input class="firstName" type="text" placeholder="First Name" />
+          <input id="firstName" type="text" placeholder="First Name" />
         </div>
         <div>
-          <input class="lastName" type="text" placeholder="Last Name" />
+          <input id="lastName" type="text" placeholder="Last Name" />
         </div>
       </div>
       <div>
-        <h2 class="greeting hidden">
-          Salams Mohammad Younas! Thank's for joining us !
-        </h2>
+        <button id="submit">Submit</button>
+      </div>
+      <div>
+        <h2 class="greeting">Salams! Thank's for joining us !</h2>
       </div>
       <div>
         <h2>How many vehicles do you want to buy?</h2>
       </div>
       <div class="btnsTotalVehicles">
-        <div class="counter hidden">
+        <div class="counter">
           <div class="number">0</div>
         </div>
         <div id="addMinus">
           <div>
-            <button class="add">+</button>
+            <button id="add">+</button>
           </div>
           <div>
-            <button class="minus">-</button>
+            <button id="minus">-</button>
           </div>
         </div>
       </div>
@@ -45,16 +46,18 @@
           </div>
           <div class="colorButtons">
             <div>
-              <button>Green</button>
+              <button id="green" id="green" onclick="greenColor1()">
+                Green
+              </button>
             </div>
             <div>
-              <button>Grey</button>
+              <button id="grey" onclick="greyColor1()">Grey</button>
             </div>
             <div>
-              <button>Yellow</button>
+              <button id="yellow" onclick="yellowColor1()">Yellow</button>
             </div>
             <div>
-              <button>Black</button>
+              <button id="red" onclick="redColor1()">Red</button>
             </div>
           </div>
           <div>
@@ -62,10 +65,10 @@
           </div>
           <div class="sizeVehicle">
             <div>
-              <input type="text" placeholder="Length" />
+              <input id="length" type="text" placeholder="Length(mm)" />
             </div>
             <div>
-              <input type="text" placeholder="Width" />
+              <input id="width" type="text" placeholder="Width(mm)" />
             </div>
           </div>
           <div class="vehicleSize">
@@ -78,16 +81,16 @@
           </div>
           <div class="colorButtons">
             <div>
-              <button>Green</button>
+              <button id="green" onclick="greenColor2()">Green</button>
             </div>
             <div>
-              <button>Grey</button>
+              <button id="grey" onclick="greyColor2()">Grey</button>
             </div>
             <div>
-              <button>Yellow</button>
+              <button id="yellow" onclick="yellowColor2()">Yellow</button>
             </div>
             <div>
-              <button>Black</button>
+              <button id="red" onclick="redColor2()">Red</button>
             </div>
           </div>
           <div>
@@ -95,10 +98,10 @@
           </div>
           <div class="sizeVehicle">
             <div>
-              <input type="text" placeholder="Length" />
+              <input id="length" type="text" placeholder="Length(mm)" />
             </div>
             <div>
-              <input type="text" placeholder="Width" />
+              <input id="width" type="text" placeholder="Width(mm)" />
             </div>
           </div>
           <div class="vehicleSize">
@@ -107,6 +110,6 @@
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="scipt.js"></script>
   </body>
 </html>
