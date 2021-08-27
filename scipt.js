@@ -10,9 +10,6 @@ const submitEl = document.getElementById("submit");
 const incrementEl = document.getElementById("add");
 const decrementEl = document.getElementById("minus");
 
-let lengthEl = document.getElementById("length").value;
-let widthEl = document.getElementById("width").value;
-
 //Default Status
 greetingEl.classList.add("hidden");
 counterEl.classList.add("hidden");
@@ -28,10 +25,11 @@ submitEl.addEventListener("click", function () {
     console.log(`${firstNameEl}`);
     greetingEl.classList.remove("hidden");
     greetingEl.innerText = `Salams  ${firstNameEl} ${lastNameEl}! Thank's for joining us!`;
+    // document.createElement("p")= `Salams  ${firstNameEl} ${lastNameEl}! Thank's for joining us!`;
     firstNameEl.innerText = ""; //how do i get this to work
     lastNameEl = 0;
   } else {
-    alert("Please enter a name that is at least 2 characters long");
+    alert("Please enter a name that is at least 3 characters long");
   }
 });
 firstLastNamesEl.addEventListener("keydown", function (e) {
@@ -68,18 +66,24 @@ decrementEl.addEventListener("click", function () {
 sizeVehicleEL.addEventListener("keydown", function (f) {
   if (f.key === "Enter") {
     console.log("Enter key pressed");
-    // sizeVehicleEL.classList.add("hidden");
-    if (lengthEL.textContent >= 161 && lengthEL.textContent <= 187) {
-      let lengthEl = document.getElementById("length").value;
-      let widthEl = document.getElementById("width").value;
-      sizeVehicleEL.innerText = `Compact Vehicle`;
+    let lengthEL = document.getElementById("length").value;
+    let widthEL = document.getElementById("width").value;
+    if (lengthEL <= 100 && widthEL <= 60) {
+      alert(`Please enter valid vehicle dimensions`);
+    } else if (lengthEL <= 140 && widthEL <= 63) {
+      sizeVehicleEL.innerText = `Economy Vehicle`;
       document.getElementsByClassName("vehicleSize")[0].style.width = "100px";
-      // } else if (sizeVehicleEL >= 188 || sizeVehicleEL <= 197) {
-      //   sizeVehicleEL.innerText = `Mid Size Vehicle`;
-      // } else if (sizeVehicleEL > 197) {
-      //   sizeVehicleEL.innerText = `Full Size Vehicle`;
-      // }
-      // sizeVehicleEL.innerText = `${lengthEl}mm * ${widthEl} mm`;
+    } else if (lengthEL <= 160 && widthEL <= 65) {
+      sizeVehicleEL.innerText = `Compact Vehicle`;
+      document.getElementsByClassName("vehicleSize")[0].style.width = "200px";
+    } else if (lengthEL <= 180 && widthEL <= 71) {
+      sizeVehicleEL.innerText = `Mid Size Vehicle`;
+      document.getElementsByClassName("vehicleSize")[0].style.width = "300px";
+    } else if (lengthEL <= 192 && widthEL <= 75) {
+      sizeVehicleEL.innerText = `Full Size Vehicle`;
+      document.getElementsByClassName("vehicleSize")[0].style.width = "400px";
+    } else if (lengthEL > 192 && widthEL > 75) {
+      sizeVehicleEL.innerText = `Vehicle not on File`;
     }
   }
 });
@@ -88,11 +92,13 @@ sizeVehicleEL.addEventListener("keydown", function (f) {
 //First set
 function greenColor1() {
   console.log("1st Green color button clicked");
-  document.getElementsByClassName("vehicleSize")[0].style.background = "green";
+  document.getElementsByClassName("vehicleSize")[0].style.background =
+    "rgb(53, 139, 53)";
 }
 function greyColor1() {
   console.log("1st Grey color button clicked");
-  document.getElementsByClassName("vehicleSize")[0].style.background = "grey";
+  document.getElementsByClassName("vehicleSize")[0].style.background =
+    "rgb(165, 164, 164)";
 }
 function yellowColor1() {
   console.log("1st Yellow color button clicked");
@@ -100,16 +106,19 @@ function yellowColor1() {
 }
 function redColor1() {
   console.log("1st Red color button clicked");
-  document.getElementsByClassName("vehicleSize")[0].style.background = "red";
+  document.getElementsByClassName("vehicleSize")[0].style.background =
+    "rgb(211, 12, 12)";
 }
 //Second Set
 function greenColor2() {
   console.log("2nd Green color button clicked");
-  document.getElementsByClassName("vehicleSize")[1].style.background = "green";
+  document.getElementsByClassName("vehicleSize")[1].style.background =
+    "rgb(53, 139, 53)";
 }
 function greyColor2() {
   console.log("2nd Grey color button clicked");
-  document.getElementsByClassName("vehicleSize")[1].style.background = "grey";
+  document.getElementsByClassName("vehicleSize")[1].style.background =
+    "rgb(165, 164, 164)";
 }
 function yellowColor2() {
   console.log("2nd Yellow color button clicked");
@@ -117,8 +126,9 @@ function yellowColor2() {
 }
 function redColor2() {
   console.log("2nd Red color button clicked");
-  document.getElementsByClassName("vehicleSize")[1].style.background = "red";
+  document.getElementsByClassName("vehicleSize")[1].style.background =
+    "rgb(211, 12, 12)";
 }
-// document.createElement("LI");
-// newItem.appendChild(textnode);
-// document.getElementById("myH1").style.color;
+
+// document.createElement("LI");   not working above??
+// newItem.appendChild(textnode);???
