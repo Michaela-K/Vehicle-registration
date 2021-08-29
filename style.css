@@ -5,6 +5,7 @@ p {
 .main {
   width: 80%;
   min-height: 5%;
+  min-width: 330px;
   background-color: #e1e7eb;
   border-radius: 30px;
   display: flex;
@@ -103,10 +104,14 @@ button:hover {
 .vehicles {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  min-width: 300px;
 }
 .vehicle {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  min-width: 300px;
   align-items: center;
   background: rgb(223, 233, 232);
   padding: 2em;
@@ -119,7 +124,9 @@ button:hover {
 .colorButtons {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
+  width: 100%;
   max-width: 400px;
 }
 .sizeVehicle {
