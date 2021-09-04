@@ -4,8 +4,8 @@ let counterEl = document.getElementsByClassName("counter")[0];
 let numberEl = document.getElementsByClassName("number")[0];
 let firstLastNamesEl = document.getElementsByClassName("firstlastNames")[0];
 let sizeVehicleEL = document.getElementsByClassName("sizeVehicle")[0];
-// let vehicleSizeEl = document.getElementsByClassName("vehicleSize")[0];
 
+// let sizeVehicleEL = document.getElementById("sizeVehicle");
 const submitEl = document.getElementById("submit");
 const incrementEl = document.getElementById("add-card");
 const decrementEl = document.getElementById("minus-card");
@@ -16,7 +16,7 @@ counterEl.classList.add("hidden");
 numberEl.textContent = 0;
 let counter = 0;
 
-//Names
+//Names Input/Greeting
 submitEl.addEventListener("click", function () {
   console.log("Submit button clicked");
   let firstNameEl = document.getElementById("firstName").value;
@@ -31,17 +31,8 @@ submitEl.addEventListener("click", function () {
     alert("Please enter a name that is at least 3 characters long");
   }
 });
-firstLastNamesEl.addEventListener("keydown", function (e) {
-  let firstNameEl = document.getElementById("firstName").value;
-  let lastNameEl = document.getElementById("lastName").value;
-  if (e.key === "Enter") {
-    console.log("Enter key pressed");
-    greetingEl.classList.remove("hidden");
-    greetingEl.innerText = `Salams  ${firstNameEl} ${lastNameEl}! Thank's for joining us!`;
-  }
-});
 
-//if add or minus buttons are clicked then increment or decrement
+//Increment
 incrementEl.addEventListener("click", function () {
   console.log(" + Button clicked");
   counter += 1;
@@ -49,7 +40,7 @@ incrementEl.addEventListener("click", function () {
   counterEl.classList.remove("hidden");
 });
 
-//decrementEl.addEventListener("click", function () {
+//Decrement
 decrementEl.addEventListener("click", function () {
   console.log("- Button clicked");
   if (counter > 0) {
@@ -86,50 +77,26 @@ decrementEl.addEventListener("click", function () {
 //   }
 // });
 
-//when you click a colour the colour should appear in the colour box
-//First set
+//Colour Buttons
 function greenColor1() {
-  console.log("1st Green color button clicked");
+  console.log("Green color button clicked");
   document.getElementsByClassName("vehicleSize")[0].style.background =
     "rgb(53, 139, 53)";
 }
 function greyColor1() {
-  console.log("1st Grey color button clicked");
+  console.log("Grey color button clicked");
   document.getElementsByClassName("vehicleSize")[0].style.background =
     "rgb(165, 164, 164)";
 }
 function yellowColor1() {
-  console.log("1st Yellow color button clicked");
+  console.log("Yellow color button clicked");
   document.getElementsByClassName("vehicleSize")[0].style.background = "yellow";
 }
 function redColor1() {
-  console.log("1st Red color button clicked");
+  console.log("Red color button clicked");
   document.getElementsByClassName("vehicleSize")[0].style.background =
     "rgb(211, 12, 12)";
 }
-//Second Set
-function greenColor2() {
-  console.log("2nd Green color button clicked");
-  document.getElementsByClassName("vehicleSize")[1].style.background =
-    "rgb(53, 139, 53)";
-}
-function greyColor2() {
-  console.log("2nd Grey color button clicked");
-  document.getElementsByClassName("vehicleSize")[1].style.background =
-    "rgb(165, 164, 164)";
-}
-function yellowColor2() {
-  console.log("2nd Yellow color button clicked");
-  document.getElementsByClassName("vehicleSize")[1].style.background = "yellow";
-}
-function redColor2() {
-  console.log("2nd Red color button clicked");
-  document.getElementsByClassName("vehicleSize")[1].style.background =
-    "rgb(211, 12, 12)";
-}
-
-// document.createElement("LI");   not working above??
-// newItem.appendChild(textnode);???
 
 //ADD OR MINUS CARDS
 const addCard = document.getElementById("add-card");
@@ -138,15 +105,18 @@ addCard.addEventListener("click", function () {
   console.log("addValue", addValue);
   addCards();
 });
-
+//ADD A CARD
 function addCards() {
   //create elements
   const vehicle = document.createElement("div");
+  vehicle.classList.add("vehicle");
   const div1 = document.createElement("div");
   //what colour would you prefer?
   let h2a = document.createElement("h2");
+  h2a.classList.add("h2");
   //color buttons
   const colorBtns = document.createElement("div");
+  colorBtns.classList.add("colorButtons");
   const div2 = document.createElement("div");
   const greenBtn = document.createElement("button");
   const greyBtn = document.createElement("button");
@@ -155,16 +125,22 @@ function addCards() {
   //Size of Vehicle
   const div3 = document.createElement("div");
   let h2b = document.createElement("h2");
+  h2b.classList.add("h2");
   //Length Width Inputs
   const sizeVehicle = document.createElement("div");
+  sizeVehicle.classList.add("sizeVehicle");
+  // sizeVehicle.id = "sizeVehicle";
   const div4 = document.createElement("div");
   const inputLength = document.createElement("input");
+  inputLength.classList.add("input");
   inputLength.placeholder = "Length(in)";
   const div5 = document.createElement("div");
   const inputWidth = document.createElement("input");
+  inputWidth.classList.add("input");
   inputWidth.placeholder = "Width(in)";
   //Car Size & color
   const vehicleSize = document.createElement("div");
+  vehicleSize.classList.add("vehicleSize");
   const p = document.createElement("p");
 
   const addValue = document.getElementsByClassName("number")[0].innerHTML;
@@ -195,29 +171,27 @@ function addCards() {
   div5.appendChild(inputWidth);
   vehicle.appendChild(vehicleSize);
   vehicleSize.appendChild(p);
-
+  //attach entire thing to the HTML
   const vehicles = document.querySelector(".vehicles");
   vehicles.appendChild(vehicle);
+
+  //Create a new Class for each new card??
+  function newCardClass() {
+    let sizeVehicleEle =
+      document.getElementsByClassName("vehicle")[`${addValue}`];
+    console.log(sizeVehicleEle);
+  }
+  newCardClass();
 }
+
+//MINUS A CARD
 const minusCard = document.getElementById("minus-card");
 minusCard.addEventListener("click", function () {
   const minusValue = document.getElementsByClassName("number")[0].innerHTML;
   console.log("minusValue", minusValue);
+  //need to grab the ID to remove it ??
+  const addValue = document.getElementsByClassName("number")[0].innerHTML;
+  let sizeVehicleEle =
+    document.getElementsByClassName("vehicle")[`${addValue}`];
+  sizeVehicleEle.remove();
 });
-
-// //create a new div and set its attributes
-// let div = document.createElement("div");
-// div.id = "content";
-// div.className = "note";
-
-// // create a new text node and add it to the div
-// let text = document.createTextNode("CreateElement example");
-// div.appendChild(text);
-
-// // create a new heading and add it to the div
-// let h2 = document.createElement("h2");
-// h2.textContent = "Add h2 element to the div";
-// div.appendChild(h2);
-
-// // add div to the document
-// document.body.appendChild(div);
