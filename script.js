@@ -24,7 +24,7 @@ submitEl.addEventListener("click", function () {
   if (firstNameEl.length > 2 && lastNameEl.length > 2) {
     console.log(`${firstNameEl}`);
     greetingEl.classList.remove("hidden");
-    greetingEl.innerText = `Salams  ${firstNameEl} ${lastNameEl}! Thank's for joining us!`;
+    greetingEl.innerText = `Welcome ${firstNameEl} ${lastNameEl}! Thank's for joining us!`;
     firstNameEl = document.getElementById("firstName").value = "";
     lastNameEl = document.getElementById("lastName").value = "";
   } else {
@@ -77,26 +77,33 @@ decrementEl.addEventListener("click", function () {
 //   }
 // });
 
-//Colour Buttons
-function greenColor1() {
-  console.log("Green color button clicked");
-  document.getElementsByClassName("vehicleSize")[0].style.background =
-    "rgb(53, 139, 53)";
-}
-function greyColor1() {
-  console.log("Grey color button clicked");
-  document.getElementsByClassName("vehicleSize")[0].style.background =
-    "rgb(165, 164, 164)";
-}
-function yellowColor1() {
-  console.log("Yellow color button clicked");
-  document.getElementsByClassName("vehicleSize")[0].style.background = "yellow";
-}
-function redColor1() {
-  console.log("Red color button clicked");
-  document.getElementsByClassName("vehicleSize")[0].style.background =
-    "rgb(211, 12, 12)";
-}
+/*
+div2.setAttribute('class', 'colorButtons'); //creates another div for color buttons
+    let green = document.createElement("BUTTON");
+    green.innerHTML = "green";
+    green.onclick = changeGreen;
+    function changeGreen() {
+        document.getElementById(`car${currentCount}`).style.backgroundColor = "green";
+    } //creates button and function for green
+    let grey = document.createElement("BUTTON");
+    grey.innerHTML = "grey";
+    grey.onclick = changeGrey;
+    function changeGrey() {
+        document.getElementById(`car${currentCount}`).style.backgroundColor = "grey";
+    } //creates button and function for grey
+    let yellow = document.createElement("BUTTON");
+    yellow.innerHTML = "yellow";
+    yellow.onclick = changeYellow;
+    function changeYellow() {
+        document.getElementById(`car${currentCount}`).style.backgroundColor = "yellow";
+    } //creates button and function for yellow
+    let brown = document.createElement("BUTTON");
+    brown.innerHTML = "brown";
+    brown.onclick = changeBrown;
+    function changeBrown() {
+        document.getElementById(`car${currentCount}`).style.backgroundColor = "brown";
+    } //creates button and function for brown
+*/
 
 //ADD OR MINUS CARDS
 const addCard = document.getElementById("add-card");
@@ -118,10 +125,30 @@ function addCards() {
   const colorBtns = document.createElement("div");
   colorBtns.classList.add("colorButtons");
   const div2 = document.createElement("div");
+  //green
   const greenBtn = document.createElement("button");
+  greenBtn.onclick = greenColor;
+    function greenColor() {
+      document.getElementById('vehicleSize').style.background = "rgb(53, 139, 53)";
+    } 
+  //grey
   const greyBtn = document.createElement("button");
+  greyBtn.onclick = greyColor;
+    function greyColor() {
+      document.getElementsByClassName('vehicleSize')[0].style.background = "rgb(165, 164, 164)";
+    } 
+  //yellow
   const yellowBtn = document.createElement("button");
+  yellowBtn.onclick = yellowColor;
+    function yellowColor() {
+      document.getElementsByClassName('vehicleSize')[0].style.background = "yellow";
+    } 
+  //red
   const redBtn = document.createElement("button");
+  redBtn.onclick = redColor;
+    function redColor() {
+      document.getElementsByClassName('vehicleSize')[0].style.background = "rgb(211, 12, 12)";
+    } 
   //Size of Vehicle
   const div3 = document.createElement("div");
   let h2b = document.createElement("h2");
@@ -140,6 +167,7 @@ function addCards() {
   inputWidth.placeholder = "Width(in)";
   //Car Size & color
   const vehicleSize = document.createElement("div");
+  vehicleSize.setAttribute("id", "vehicleSize");
   vehicleSize.classList.add("vehicleSize");
   const p = document.createElement("p");
 
